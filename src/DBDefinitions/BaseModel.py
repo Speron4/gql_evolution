@@ -31,7 +31,7 @@ def UUIDColumn(**kwargs):
 #
 # zde definujte sve SQLAlchemy modely
 # je-li treba, muzete definovat modely obsahujici jen id polozku, na ktere se budete odkazovat
-#
+
 
 IDType = uuid.UUID
 
