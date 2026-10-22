@@ -62,7 +62,8 @@ async def init_database_data(session: AsyncSession, get_demodata=get_demodata) -
         if Model.__name__.endswith("TypeModel")
     ]
 
-    isDemo = os.environ.get("DEMODATA", None) in ["True", "true", True]
+    # Pokud proměnná DEMODATA neexistuje, použije se výchozí hodnota "True"
+    isDemo = os.environ.get("DEMODATA", "True") in ["True", "true", True]
 
     ModelNamesToImport = ModelNames if isDemo else TypeNames
 
@@ -82,13 +83,26 @@ async def init_database_data(session: AsyncSession, get_demodata=get_demodata) -
     modelIndex = dict((DBModel.__tablename__, DBModel) for DBModel in ModelsToImport)
     print(f"Models to import: {ModelsToImport}\nTable names: {table_names}\nModel index: {modelIndex}", flush=True)
 
+    from sqlalchemy.ext.asyncio import async_sessionmaker
+    session_factory_inner = async_sessionmaker(session.bind, expire_on_commit=False, class_=AsyncSession)
     @asynccontextmanager
     async def session_maker():
-        try:
-            yield session
-        finally:
-            pass
+        async with session_factory_inner() as s:
+            yield s
 
     await ImportModels(session_maker, ModelsToImport, json_data)
 
     print("Data initialized", flush=True)
+
+
+if __name__ == "__main__":
+    import asyncio
+    from src.DBDefinitions import startEngine, ComposeConnectionString
+
+    async def _main():
+        conn_str = ComposeConnectionString()
+        session_maker = await startEngine(conn_str, makeUp=True)
+        async with session_maker() as session:
+            await init_database_data(session)
+
+    asyncio.run(_main())

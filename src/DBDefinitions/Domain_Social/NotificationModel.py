@@ -5,6 +5,7 @@ from sqlalchemy import (
     String,
     DateTime,
     ForeignKey,
+    Boolean,
 )
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -19,22 +20,18 @@ from src.DBDefinitions.BaseModel import BaseDBModel, UUIDColumn, UUIDFKey, IDTyp
 #
 ###########################################################################################################################
 
-class EventInvitationModel(BaseDBModel):
-    __tablename__ = "event_invitations"
+class NotificationModel(BaseDBModel):
+    __tablename__ = "notifications"
 
     id: Mapped[IDType] = mapped_column(primary_key=True, default=None, nullable=True)
     
-    event_id: Mapped[Optional[IDType]] = mapped_column(ForeignKey("events.id"), default=None, nullable=True, comment="Event assigned to the invitation")
-    user_id: Mapped[Optional[IDType]] = UUIDFKey(ForeignKey("users.id"), default=None, nullable=True, comment="User assigned to the invitation")
-    state_id: Mapped[Optional[IDType]] = UUIDFKey(ForeignKey("states.id"), default=None, nullable=True, comment="State assigned to the invitation")
+    # Tyto sloupce jsou odkazy na jiné mikroslužby (federace), proto nevyužívají ForeignKey
+    owner_id: Mapped[Optional[IDType]] = mapped_column(index=True, default=None, nullable=True, comment="User whom the notification is for")
+    activity_id: Mapped[Optional[IDType]] = mapped_column(index=True, default=None, nullable=True, comment="Activity that triggered the notification")
     
-    # Relationships: viewonly indicates that these relationships are loaded via foreign keys.
-    event = relationship(
-        "EventModel",
-        primaryjoin="EventInvitationModel.event_id==EventModel.id",
-        uselist=False,
-        viewonly=True
-    )
+    title: Mapped[Optional[str]] = mapped_column(String, default=None, nullable=True, comment="Short title of the notification")
+    content: Mapped[Optional[str]] = mapped_column(String, default=None, nullable=True, comment="Text content of the notification")
+    read: Mapped[Optional[bool]] = mapped_column(Boolean, default=False, nullable=True, comment="Information whether the user read the notification")
 
 
 #                         +-------------+
