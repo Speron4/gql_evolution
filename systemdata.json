@@ -11,6 +11,54 @@
       "name": "Změna stavu",
       "name_en": "State changed",
       "parent_id": "c1f7b8e4-2a6d-4f9e-b1c3-8d5e0a2f4b7c"
+    },
+    {
+      "id": "d2e8c9f5-3b7e-50a1-c2d4-9e3f1b5c6a8d",
+      "name": "Úkol",
+      "name_en": "Task",
+      "parent_id": null
+    },
+    {
+      "id": "e3f9d0a6-4c8f-61b2-d3e5-0f4a2c6d7b9e",
+      "name": "Faktura",
+      "name_en": "Invoice",
+      "parent_id": null
+    },
+    {
+      "id": "f4a0e1b7-5d9a-72c3-e4f6-1a5b3d7e8c0f",
+      "name": "Dokument",
+      "name_en": "Document",
+      "parent_id": null
+    },
+    {
+      "id": "1b6c7d8e-9f0a-54b3-c2d1-e0f9a8b7c6d5",
+      "name": "Nový komentář",
+      "name_en": "New comment",
+      "parent_id": "c1f7b8e4-2a6d-4f9e-b1c3-8d5e0a2f4b7c"
+    },
+    {
+      "id": "2c7d8e9f-0a1b-65c4-d3e2-f1a0b9c8d7e6",
+      "name": "Přidělení",
+      "name_en": "Assigned",
+      "parent_id": "d2e8c9f5-3b7e-50a1-c2d4-9e3f1b5c6a8d"
+    },
+    {
+      "id": "3d8e9f0a-1b2c-76d5-e4f3-02b1c0d9e8f7",
+      "name": "Blížící se termín",
+      "name_en": "Deadline approaching",
+      "parent_id": "d2e8c9f5-3b7e-50a1-c2d4-9e3f1b5c6a8d"
+    },
+    {
+      "id": "4e9f0a1b-2c3d-87e6-f5a4-13c2d1e0f9a8",
+      "name": "Schválení",
+      "name_en": "Approved",
+      "parent_id": "e3f9d0a6-4c8f-61b2-d3e5-0f4a2c6d7b9e"
+    },
+    {
+      "id": "6a1b2c3d-4e5f-09a8-17c6-35e4f3a2b1c0",
+      "name": "Nová verze",
+      "name_en": "New version",
+      "parent_id": "f4a0e1b7-5d9a-72c3-e4f6-1a5b3d7e8c0f"
     }
   ],
   "notification_rules": [
@@ -20,6 +68,27 @@
       "entity_type_id": "c1f7b8e4-2a6d-4f9e-b1c3-8d5e0a2f4b7c",
       "activity_type_id": "e8a2d5c1-7f4b-43a9-8e2d-1c6f9b0a3d5e",
       "enabled": true
+    },
+    {
+      "id": "8c3d4e5f-6a7b-21c0-39e8-57a6b5c4d3e2",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "entity_type_id": "d2e8c9f5-3b7e-50a1-c2d4-9e3f1b5c6a8d",
+      "activity_type_id": "2c7d8e9f-0a1b-65c4-d3e2-f1a0b9c8d7e6",
+      "enabled": true
+    },
+    {
+      "id": "9d4e5f6a-7b8c-32d1-40f9-68b7c6d5e4f3",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "entity_type_id": "e3f9d0a6-4c8f-61b2-d3e5-0f4a2c6d7b9e",
+      "activity_type_id": "4e9f0a1b-2c3d-87e6-f5a4-13c2d1e0f9a8",
+      "enabled": true
+    },
+    {
+      "id": "a0e1f2b3-8c9d-43e2-51a0-79c8d7e6f5a4",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "entity_type_id": "f4a0e1b7-5d9a-72c3-e4f6-1a5b3d7e8c0f",
+      "activity_type_id": "6a1b2c3d-4e5f-09a8-17c6-35e4f3a2b1c0",
+      "enabled": false
     }
   ],
   "notifications": [
@@ -37,6 +106,166 @@
       "activity_id": "f5e4d3c2-b1a0-49e8-8d7c-6b5a4f3e2d1c",
       "title": "Nový komentář",
       "content": "Kolega přidal komentář k vaší zprávě.",
+      "read": true
+    },
+    {
+      "id": "11b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+      "title": "Nový úkol",
+      "content": "Byl vám přidělen úkol: Příprava podkladů pro Q3.",
+      "read": false
+    },
+    {
+      "id": "22c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "b2c3d4e5-f6a7-8b9c-0d1e-2f3a4b5c6d7e",
+      "title": "Blížící se termín",
+      "content": "Úkol 'Odeslání výkazů' má termín splnění za 2 dny.",
+      "read": false
+    },
+    {
+      "id": "33d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "activity_id": "c3d4e5f6-a7b8-9c0d-1e2f-3a4b5c6d7e8f",
+      "title": "Faktura přijata",
+      "content": "Faktura č. 2026045 byla úspěšně přijata do systému.",
+      "read": true
+    },
+    {
+      "id": "44e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f8a",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "d4e5f6a7-b8c9-0d1e-2f3a-4b5c6d7e8f9a",
+      "title": "Schválení faktury",
+      "content": "Faktura od dodavatele XYZ byla schválena k proplacení.",
+      "read": false
+    },
+    {
+      "id": "55f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8a9b",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "e5f6a7b8-c9d0-1e2f-3a4b-5c6d7e8f9a0b",
+      "title": "Dokument aktualizován",
+      "content": "Uživatel Jan Novák nahrál novou verzi dokumentu 'Smlouva_v2.pdf'.",
+      "read": true
+    },
+    {
+      "id": "66a7b8c9-d0e1-4f2a-3b4c-5d6e7f8a9b0c",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "activity_id": "f6a7b8c9-d0e1-2f3a-4b5c-6d7e8f9a0b1c",
+      "title": "Změna stavu projektu",
+      "content": "Projekt 'Implementace CRM' byl přepnut do stavu 'Dokončeno'.",
+      "read": false
+    },
+    {
+      "id": "77b8c9d0-e1f2-4a3b-4c5d-6e7f8a9b0c1d",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "07b8c9d0-e1f2-3a4b-5c6d-7e8f9a0b1c2d",
+      "title": "Nový úkol",
+      "content": "Byl vám přidělen úkol: Revize přístupových práv.",
+      "read": false
+    },
+    {
+      "id": "88c9d0e1-f2a3-4b4c-5d6e-7f8a9b0c1d2e",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "18c9d0e1-f2a3-4b5c-6d7e-8f9a0b1c2d3e",
+      "title": "Zpožděný úkol",
+      "content": "Úkol 'Návrh architektury' je 1 den po termínu splnění.",
+      "read": true
+    },
+    {
+      "id": "99d0e1f2-a3b4-4c5d-6e7f-8a9b0c1d2e3f",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "activity_id": "29d0e1f2-a3b4-5c6d-7e8f-9a0b1c2d3e4f",
+      "title": "Komentář k úkolu",
+      "content": "Petr Dvořák přidal komentář k úkolu 'Nastavení CI/CD'.",
+      "read": false
+    },
+    {
+      "id": "00e1f2a3-b4c5-4d6e-7f8a-9b0c1d2e3f4a",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "30e1f2a3-b4c5-6d7e-8f9a-0b1c2d3e4f5a",
+      "title": "Zrušení projektu",
+      "content": "Projekt 'Expanze trh' byl zrušen administrátorem.",
+      "read": false
+    },
+    {
+      "id": "11f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "41f2a3b4-c5d6-7e8f-9a0b-1c2d3e4f5a6b",
+      "title": "Schválení žádosti",
+      "content": "Vaše žádost o dovolenou v termínu 10.-14. srpna byla schválena.",
+      "read": true
+    },
+    {
+      "id": "22a3b4c5-d6e7-4f8a-9b0c-1d2e3f4a5b6c",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "activity_id": "52a3b4c5-d6e7-8f9a-0b1c-2d3e4f5a6b7c",
+      "title": "Faktura zamítnuta",
+      "content": "Faktura č. 2026046 byla zamítnuta finančním oddělením z důvodu chybějící objednávky.",
+      "read": false
+    },
+    {
+      "id": "33b4c5d6-e7f8-4a9b-0c1d-2e3f4a5b6c7d",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "63b4c5d6-e7f8-9a0b-1c2d-3e4f5a6b7c8d",
+      "title": "Upozornění systému",
+      "content": "Dnes ve 22:00 proběhne plánovaná odstávka systému.",
+      "read": false
+    },
+    {
+      "id": "44c5d6e7-f8a9-4b0c-1d2e-3f4a5b6c7d8e",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "74c5d6e7-f8a9-0b1c-2d3e-4f5a6b7c8d9e",
+      "title": "Dokument připraven",
+      "content": "Dokument 'Výroční zpráva 2025' je připraven k vašemu podpisu.",
+      "read": true
+    },
+    {
+      "id": "55d6e7f8-a9b0-4c1d-2e3f-4a5b6c7d8e9f",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "activity_id": "85d6e7f8-a9b0-1c2d-3e4f-5a6b7c8d9e0f",
+      "title": "Příloha přidána",
+      "content": "K projektu 'Migrace DB' byla přidána nová příloha.",
+      "read": false
+    },
+    {
+      "id": "66e7f8a9-b0c1-4d2e-3f4a-5b6c7d8e9f0a",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "96e7f8a9-b0c1-2d3e-4f5a-6b7c8d9e0f1a",
+      "title": "Změna priority",
+      "content": "Priorita úkolu 'Oprava chyby přihlášení' byla změněna na 'Kritická'.",
+      "read": false
+    },
+    {
+      "id": "77f8a9b0-c1d2-4e3f-4a5b-6c7d8e9f0a1b",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "activity_id": "07f8a9b0-c1d2-3e4f-5a6b-7c8d9e0f1a2b",
+      "title": "Nový účastník",
+      "content": "Jana Novotná byla přidána jako účastník do vašeho projektu.",
+      "read": true
+    },
+    {
+      "id": "88a9b0c1-d2e3-4f4a-5b6c-7d8e9f0a1b2c",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "18a9b0c1-d2e3-4f5a-6b7c-8d9e0f1a2b3c",
+      "title": "Konec zkušební doby",
+      "content": "Upozorňujeme, že za 7 dní končí zkušební doba zaměstnance Tomáše K.",
+      "read": false
+    },
+    {
+      "id": "99b0c1d2-e3f4-4a5b-6c7d-8e9f0a1b2c3d",
+      "owner_id": "a7b3c9d1-5e2f-48a6-bd4c-1f0e2a3b5c8d",
+      "activity_id": "29b0c1d2-e3f4-5a6b-7c8d-9e0f1a2b3c4d",
+      "title": "Povolení uděleno",
+      "content": "Nyní máte přístup do sekce 'Manažerské reporty'.",
+      "read": false
+    },
+    {
+      "id": "00c1d2e3-f4a5-4b6c-7d8e-9f0a1b2c3d4e",
+      "owner_id": "b8c4d0e2-6f3a-49b7-ce5d-2f1f3b4c6d9e",
+      "activity_id": "30c1d2e3-f4a5-6b7c-8d9e-0f1a2b3c4d5e",
+      "title": "Uzavření měsíce",
+      "content": "Finanční uzávěrka za minulý měsíc byla úspěšně dokončena.",
       "read": true
     }
   ]
