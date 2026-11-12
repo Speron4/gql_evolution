@@ -25,7 +25,7 @@ class NotificationModel(BaseDBModel):
 
     id: Mapped[IDType] = mapped_column(primary_key=True, default=None, nullable=True)
     
-    # Tyto sloupce jsou odkazy na jiné mikroslužby (federace), proto nevyužívají ForeignKey
+    
     owner_id: Mapped[Optional[IDType]] = mapped_column(index=True, default=None, nullable=True, comment="User whom the notification is for")
     activity_id: Mapped[Optional[IDType]] = mapped_column(index=True, default=None, nullable=True, comment="Activity that triggered the notification")
     

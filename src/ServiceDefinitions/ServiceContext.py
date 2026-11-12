@@ -6,6 +6,9 @@ from src.Dataloaders import LoaderMap
 if typing.TYPE_CHECKING:
     from src.ServiceDefinitions.Domain_Events.EventService import EventService as _EventService
     from src.ServiceDefinitions.Domain_Events.EventInvitationService import EventInvitationService as _EventInvitationService
+    from src.ServiceDefinitions.Domain_Social.NotificationService import NotificationService as _NotificationService
+    from src.ServiceDefinitions.Domain_Social.NotificationRuleService import NotificationRuleService as _NotificationRuleService
+    from src.ServiceDefinitions.Domain_Social.NotificationTypeService import NotificationTypeService as _NotificationTypeService
 
 
 @dataclasses.dataclass(frozen=True)
@@ -19,6 +22,21 @@ class ServiceRegistry:
     def EventInvitationService(self) -> type['_EventInvitationService']:
         from src.ServiceDefinitions.Domain_Events.EventInvitationService import EventInvitationService
         return EventInvitationService
+
+    @property
+    def NotificationService(self) -> type['_NotificationService']:
+        from src.ServiceDefinitions.Domain_Social.NotificationService import NotificationService
+        return NotificationService
+
+    @property
+    def NotificationRuleService(self) -> type['_NotificationRuleService']:
+        from src.ServiceDefinitions.Domain_Social.NotificationRuleService import NotificationRuleService
+        return NotificationRuleService
+
+    @property
+    def NotificationTypeService(self) -> type['_NotificationTypeService']:
+        from src.ServiceDefinitions.Domain_Social.NotificationTypeService import NotificationTypeService
+        return NotificationTypeService
 
 
 SERVICES = ServiceRegistry()
